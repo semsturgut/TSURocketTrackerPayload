@@ -13,7 +13,7 @@ int indices[13];
 void setup() {
   Serial.begin(19200);
   Serial1.begin(4800);
-  Serial2.begin(57600);
+  Serial2.begin(9600); // 57600 for Radio
   for (int i=0;i<300;i++){ // Initialize a buffer for received data
      linea[i]=' ';
    } 
@@ -66,8 +66,8 @@ void loop(){
       }
     }
     if (input_Latitude != "" && input_Longitude != "") {
-      send_Data = input_Latitude + "," + input_Longitude + "#";
-      Serial.println(send_Data);
+      send_Data = "#" + input_Latitude + "," + input_Longitude + "#$\n";
+      Serial.print(send_Data);
       Serial2.print(send_Data);
       input_Latitude = "";
       input_Longitude = "";
