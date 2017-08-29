@@ -1,4 +1,5 @@
 #include <TinyGPS.h>
+// TODO: Reduce the power consuption on radio signal.
 
 String sendData;
 long lat,lon; // create variable for latitude and longitude object
